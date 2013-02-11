@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<body>
+  <head>
+    <title>ATS Mini Mystery Hunt - Online Edition</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+      
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300,200' rel='stylesheet' type='text/css'>
+    
+    <!-- JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type='text/javascript'>
+    
+    $(document).ready(function(){
+      $(window).resize(function(){
+  
+        $('#centered').css({
+            position:'absolute',
+            top: ($(window).height() - $('#centered').outerHeight())/2
+        });
+      });
+      $(window).resize();
+    });
+    </script>
+  </head>
+  <body>
+    <div id='centered'>
+      <h1><span class='ats-red'>ATS</span> MINI MYSTERY HUNT</h1>
+      <h2><div class='dash'></div>ONLINE EDITION<div class='dash'></div></h2>
+      <p>This year's mystery hunt is happening during the <a href='https://www.facebook.com/events/468887809830934/?sid=0.4333468535915017'>
+      ATS Lunar New Year Festival</a>. If you can't make that event, this is the online edition where the puzzles will be released the same time
+      they are released during the event. Although we won't be able to give you a prize, there will always be eternal glory! (and
+      leaderboards and such). </p>
+    </div>
+  </body>
+</body>
