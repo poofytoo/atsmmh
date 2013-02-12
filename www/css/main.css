@@ -18,25 +18,33 @@ html, body{
   text-align: center;
 }
 h1{
+  margin-bottom: 5px;
+  
+}
+.ats-hunt{
   margin-top: 40px;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
   font-family: 'cubano', sans-serif;
   font-size: 60px;
   text-align: center;
+  
   
   background: -webkit-linear-gradient(#ddd, #777);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
 }
-h2{
-  font-family: 'Lucida Sans', sans-serif;
-  text-align: center;
-  color: #999;
-  font-size: 24px;
-  letter-spacing: 8px;
-}
 .ats-red{
+  text-shadow: 2px 2px 2px #000000;
+  filter: dropshadow(color=#000000, offx=1, offy=1);
+  
+  margin-top: 40px;
+  margin-right: 16px;
+  margin-bottom: 10px;
+  font-family: 'cubano', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  
   background: #980e0e;
   background-color: #980e0e;
   color: #980e0e;
@@ -44,6 +52,13 @@ h2{
   -webkit-background-clip: text;
      -moz-background-clip: text;
           background-clip: text;
+}
+h2{
+  font-family: 'Lucida Sans', sans-serif;
+  text-align: center;
+  color: #999;
+  font-size: 24px;
+  letter-spacing: 8px;
 }
 .dash{
   display: inline-block;
@@ -65,7 +80,7 @@ a{
   color: #b4dffa;
   text-decoration: none;
 }
-input{
+input[type='text']{
   margin: 30px auto;
   outline: none;
   border: none;
@@ -77,6 +92,23 @@ input{
   font-size: 16px;
   font-family: 'Lucida Sans', sans-serif;
   text-align: center;
+}
+input[type='submit']{
+  margin: 30px auto 30px 10px;
+  outline: none;
+  border: none;
+  color: #eee;
+  background: #555;
+  border: 1px solid #333;
+  padding: 8px;
+  width: 80px;
+  font-size: 16px;
+  font-family: 'Lucida Sans', sans-serif;
+  text-align: center;
+}
+input[type='submit']:hover{
+  opacity: 0.8;
+  cursor: pointer;
 }
 input:focus{
   border: 1px solid #b4dffa;
