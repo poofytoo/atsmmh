@@ -12,9 +12,11 @@
     
     <!-- JavaScript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
     <script type='text/javascript'>
     
     $(document).ready(function(){
+      var myDataRef = new Firebase('https://poofytoo.firebaseio.com/');
       $(window).resize(function(){
   
         $('#centered').css({
@@ -23,6 +25,35 @@
         });
       });
       $(window).resize();
+      
+      var arr = [];
+      
+      function IsEmail(email) {
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+      }
+
+      $('input[type=text]').on('keyup', function(e) {
+          if (e.which == 13) {
+            e.preventDefault();
+            email = $("#user-email").val();
+            if (IsEmail(email)){
+              key = email.replace("@","").replace(".","");
+              myDataRef.child(key).set(email);
+              $("#confirm-message").slideUp("fast");
+              $("#confirm-message").slideUp("fast", function(){
+                $("#confirm-message").text("you've been added to our emailing list!");
+              });
+              $("#user-email").css({border: "green 1px solid"});
+            } else {
+              $("#confirm-message").slideUp("fast", function(){
+                $("#confirm-message").text("hey, that's not an email");
+              });
+              $("#user-email").css({border: "red 1px solid"});
+            }
+            $("#confirm-message").slideDown("fast");
+          }
+      });
     });
     </script>
   </head>
@@ -34,6 +65,8 @@
       ATS Lunar New Year Festival</a>. If you can't make that event, this is the online edition where the puzzles will be released the same time
       they are released during the event. Although we won't be able to give you a prize, there will always be eternal glory! (and
       leaderboards and such). </p>
+      <input type='text' id='user-email' placeholder='your email here'/>
+      <div id='confirm-message'>You've been added to our mailing list!</div>
     </div>
   </body>
 </body>
